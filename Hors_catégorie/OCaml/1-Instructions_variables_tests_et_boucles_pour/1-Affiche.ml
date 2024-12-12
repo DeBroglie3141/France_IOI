@@ -1,0 +1,1 @@
+print_string "5 a pour carré 25";
