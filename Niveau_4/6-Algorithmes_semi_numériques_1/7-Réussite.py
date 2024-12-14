@@ -1,10 +1,11 @@
+def eratosthene(N):
+    is_prime = [True] * (N + 1)
+    for i in range(2, int(N**0.5) + 1):
+        if is_prime[i]:
+            for multiple in range(i * i, N + 1, i):
+                is_prime[multiple] = False
+    return [x for x in range(N + 1) if is_prime[x]]
 N = int(input())
-
-def is_prime(n):
-    if all(n%i != 0 for i in range(2,int(n**0.5)+1)):
-        return str(n) + '\n'
-    else:
-        return ''
-
-for n in range(N):
-    print(is_prime(n), end='')
+primes = eratosthene(N)
+for elem in primes:
+    print(elem)
